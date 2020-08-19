@@ -1,0 +1,65 @@
+# This is Git's per-user configuration file.
+[user]
+	name = Aravind Mereddi
+	email = <>
+[color]
+    branch = auto
+    diff = auto
+    status = auto
+[color "branch"]
+    current = red reverse
+    local = blue
+    remote = green
+[color "diff"]
+    meta = yellow
+    frag = magenta
+    old = red bold
+    new = green
+    plain = white
+[color "status"]
+    added = yellow
+    changed = green
+    untracked = cyan
+[alias]
+  s = status
+  co = checkout
+  cob = checkout -b
+  com = checkout master
+  coe = checkout eng
+  coq = checkout qa
+  pom = push origin master
+  fp = fetch -p
+  lol = log --graph --decorate --pretty=oneline --abbrev-commit --all
+  ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
+  ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+  lnc = log --pretty=format:"%h\\ %s\\ [%cn]"
+  lds = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short
+  ld = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=relative
+  le = log --oneline --decorate
+  fl = log -u
+  dl = "!git ll -1"
+  dlc = diff --cached HEAD^
+  dr  = "!f() { git diff "$1"^.."$1"; }; f"
+  lc  = "!f() { git ll "$1"^.."$1"; }; f"
+  diffr  = "!f() { git diff "$1"^.."$1"; }; f"
+  f = "!git ls-files | grep -i"
+  gr = grep -Ii
+  pr = pull --rebase
+  lasttag = describe --tags --abbrev=0
+  unstage = reset HEAD
+  undo = checkout --
+  rim = rebase -i master
+  po = push origin
+  pof = push origin -f
+[core]
+	autocrlf = input
+[diff]
+	tool = bc3
+[difftool]
+  bc3 = trustExitCode
+  tool = bc3
+[merge]
+	tool = bc3
+[mergetool]
+  tool = bc3
+	bc3 = trustExitCode
